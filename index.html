@@ -1,0 +1,413 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Follow-Your-Motion</title>
+<link href="./files/style.css" rel="stylesheet">
+<script type="text/javascript" src="./files/jquery.mlens-1.0.min.js"></script> 
+<script type="text/javascript" src="./files/jquery.js"></script>
+</head>
+
+
+<!--从这里开始改.../-->
+<body>
+<div class="content">
+  <div class="logo" style="text-align: center;">
+    <a href="index.html">
+      <img src="./assets/Logo2.png">
+    </a>
+  </div>
+
+  <!-- 0. -->
+  <h1><strong>Follow-Your-Motion: Video Motion Transfer via Efficient Spatial-Temporal Decoupled Finetuning</strong></h1>
+  <p id="authors">
+  <span style="font-size: 22px">
+    <a href="https://github.com/mayuelala">Yue Ma</a><sup>1*</sup>,
+    <a href="https://scholar.google.com.my/citations?user=GZC_7c4AAAAJ">Yulong Liu</a><sup>1*</sup>,
+    <a href="https://github.com/follow-your-motion">Qiyuan Zhu</a><sup>1*</sup>,
+    <a href="">Ayden Yang</a><sup></sup>,
+    <a href="https://github.com/fkyyyy">Kunyu Feng</a><sup>2</sup>,
+    <a href="https://github.com/NXZXH">Xinhua Zhang</a><sup>3</sup>,<br>
+    <a href="https://scholar.google.com/citations?user=VTrRNN4AAAAJ&hl=zh-CN">Zhifeng Li</a><sup>4</sup>,
+    <a href="https://facultyprofiles.hkust.edu.hk/profiles.php?profile=sirui-han-siruihan">Sirui Han</a><sup>1†</sup>,
+    <a href="https://chenyangqiqi.github.io/">Chenyang Qi</a><sup>1†</sup>,
+    <a href="https://scholar.google.com/citations?user=lLMX9hcAAAAJ&hl=en">Qifeng Chen</a><sup>1</sup>,
+  </span>
+  <br>
+  <span style="font-size: 18px">
+    <sup>1</sup>HKUST &nbsp;&nbsp;
+    <sup>2</sup>HKUST(GZ) &nbsp;&nbsp;
+    <sup>3</sup>Tsinghua University &nbsp;&nbsp;
+    <sup>4</sup>Tencent
+  </span>
+  <br>
+  <div style="text-align: center;">
+    <span style="font-size: 14px">
+      <sup>*</sup>Equal contribution &nbsp;&nbsp;&nbsp;
+      <sup>†</sup>Corresponding Authors
+    </span>
+  </div>
+</p>
+
+
+  <!-- 1. -->
+  <br>
+  <br>
+  <video width="100%" autoplay muted loop>
+    <!-- <source src="./assets/ConceptMaster4K.mp4" type="video/mp4"> -->
+    <source src="./assets/Follow-Your-Motion.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+
+  <font size="+2">
+    <p style="text-align: center;"> 
+      <a href="https://github.com/follow-your-motion" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/follow-your-motion" target="_blank">[Code]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+     </p>
+  </font>
+  <p style="text-align: center;">
+  </p>
+</div>
+
+
+<!-- 2. -->
+<div class="content">
+  <h2 style="text-align:center;"><strong>Abstract</strong></h2>
+  <p>
+    Recently, breakthroughs in the video diffusion transformer have shown remarkable capabilities in diverse motion generations. As for the motion-transfer task, current methods mainly use two-stage Low-Rank Adaptations (LoRAs) finetuning to obtain better performance. However, existing adaptation-based motion transfer still suffers from motion inconsistency and tuning inefficiency when applied to large video diffusion transformers. Naive two-stage LoRA tuning struggles to maintain motion consistency between generated and input videos due to the inherent spatial-temporal coupling in the 3D attention operator. Additionally, they require time-consuming fine-tuning processes in both stages. To tackle these issues, we propose 
+    <span style="font-weight: bolder;">Follow-Your-Motion</span>, an efficient two-stage video motion transfer framework that finetunes a powerful video diffusion transformer to synthesize complex motion. Specifically, we propose a spatial-temporal decoupled LoRA to decouple the attention architecture for spatial appearance and temporal motion processing. During the second training stage, we design the sparse motion sampling and adaptive RoPE to accelerate the tuning speed. To address the lack of a benchmark for this field, we introduce MotionBench, a comprehensive benchmark comprising diverse motion, including creative camera motion, single object motion, multiple object motion, and complex human motion. We show extensive evaluations on MotionBench to verify the superiority of Follow-Your-Motion.
+  </p>
+</div>
+
+
+<!-- 3. -->
+<div class="content">
+  <h1 style="text-align:center;"><strong>Results</strong></h1>
+  <p>
+    <strong><em style="font-size: 30px;">1) Single object.</em></strong>
+  </p>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/1.mp4" type="video/mp4">
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/2.mp4" type="video/mp4">
+  </video><br>
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/3.mp4" type="video/mp4">
+  </video><br>
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/4.mp4" type="video/mp4">
+  </video><br>
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/5.mp4" type="video/mp4">
+  </video><br>
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/6.mp4" type="video/mp4">
+  </video><br>
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/7.mp4" type="video/mp4">
+  </video><br>
+
+  <p>
+    <strong><em style="font-size: 30px;">2) Multiple objects.</em></strong>
+  </p>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/8.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/9.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/10.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/11.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/12.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/13.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/14.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  
+
+  <p>
+    <strong><em style="font-size: 30px;">3) Camera motion.</em></strong>
+  </p>
+  <video width="100%" c>
+    <source src="./assets/15.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/16.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/17.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/18.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/19.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+
+  <p>
+    <strong><em style="font-size: 30px;">4) Complex human motion.</em></strong>
+  </p>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/20.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/21.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/22.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/23.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/24.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/25.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/26.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/27.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/28.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+  <video width="100%" autoplay muted loop>
+    <source src="./assets/29.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br>
+</div>
+
+
+<!-- 4. -->
+<div class="content">
+  <h2 style="text-align:center;"><strong>Follow-Your-Motion framework</strong></h2>
+  <img class="summary-img" src="assets/method.png" style="width:100%;">
+  <p>
+    Overview of the framework of our proposed <strong>Follow-Your-Motion</strong>. 
+    Stage 1: We first classify the attention heads using a pseudo spatial attention map. 
+    Stage 2: After attention classification, we first tune the spatial LoRA using a random frame in the video. 
+    Stage 3: After finishing spatial LoRA tuning, we load the spatial LoRA weight and conduct temporal tuning using sparse motion sampling and adaptive RoPE.
+  </p>
+</div>
+
+
+<!-- 1.Comparison-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>11111111111111111111111</title>
+    <style>
+        .video-container {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .left-arrow {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .right-arrow {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+        .dots {
+            text-align: center;
+            padding: 10px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- 第一个视频框 -->
+        <!-- 1.-->
+        <h2 style="text-align:center;"><strong>Comparison with other solutions</strong></h2>
+        <!-- 2.-->
+        <div class="video-container" data-videos='["./assets/30.mp4", "./assets/31.mp4", "./assets/32.mp4", "./assets/33.mp4"]'>
+            <video width="100%" autoplay muted loop>
+                <source src="./assets/30.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <a class="arrow left-arrow" onclick="switchVideo(this, 'prev')">&#10094;</a>
+            <a class="arrow right-arrow" onclick="switchVideo(this, 'next')">&#10095;</a>
+            <!-- 3.-->
+            <div class="dots">
+                <span class="dot" onclick="currentVideo(this, 0)"></span>
+                <span class="dot" onclick="currentVideo(this, 1)"></span>
+                <span class="dot" onclick="currentVideo(this, 2)"></span>
+                <span class="dot" onclick="currentVideo(this, 3)"></span>
+            </div>
+      
+        </div>
+
+
+        <!-- 第四个视频框 -->
+        <!-- 1.-->
+        <h2 style="text-align:center;"><strong>Ablation study</strong></h2>
+        <!-- 2.-->
+        <div class="video-container" data-videos='["./assets/34.mp4"]'>
+            <video width="100%" autoplay muted loop>
+                <source src="./assets/34.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
+    <script>
+        function switchVideo(element, direction) {
+            const container = element.closest('.video-container');
+            const videoPlayer = container.querySelector('video');
+            const videoSource = videoPlayer.querySelector('source');
+            const videos = JSON.parse(container.getAttribute('data-videos'));
+            let currentVideoIndex = videos.findIndex(video => video.includes(videoSource.src.split('/').pop()));
+
+            videoPlayer.style.opacity = 0; // Start fade out
+            setTimeout(() => {
+                if (direction === 'next') {
+                    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+                } else if (direction === 'prev') {
+                    currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+                }
+                videoSource.src = videos[currentVideoIndex];
+                videoPlayer.load();
+                videoPlayer.play();
+                videoPlayer.style.opacity = 1; // Fade in
+                updateDots(container, currentVideoIndex);
+            }, 500); // Match the transition duration
+        }
+
+        function currentVideo(element, index) {
+            const container = element.closest('.video-container');
+            const videoPlayer = container.querySelector('video');
+            const videoSource = videoPlayer.querySelector('source');
+            const videos = JSON.parse(container.getAttribute('data-videos'));
+
+            videoPlayer.style.opacity = 0; // Start fade out
+            setTimeout(() => {
+                videoSource.src = videos[index];
+                videoPlayer.load();
+                videoPlayer.play();
+                videoPlayer.style.opacity = 1; // Fade in
+                updateDots(container, index);
+            }, 500); // Match the transition duration
+        }
+
+        function updateDots(container, activeIndex) {
+            const dots = container.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.className = dot.className.replace(' active', '');
+                if (index === activeIndex) {
+                    dot.className += ' active';
+                }
+            });
+        }
+
+        // Initialize the first dot as active for each video container
+        document.querySelectorAll('.video-container').forEach(container => {
+            updateDots(container, 0);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+</div>
+<div class="content" id="acknowledgements">
+  <p>
+    💖Enjoyed this project? Drop a star ⭐<a href="https://github.com/follow-your-motion">follow-your-motion</a>⭐—it means a lot!<br><br>
+    🚀Our project page is borrowed from <a href="https://yuzhou914.github.io/ConceptMaster/">ConceptMaster</a>.💡
+  </p>
+</div>
+
+</div>
+<div class="content" id="acknowledgements">
+  <p>
+    <h3>Citation</h3>
+      @article{,<br>
+      title={},<br>
+      author=<br>
+      journal={},<br>
+      year={2025},<br>
+      publisher={}<br>
+      }
+  </p>
+</div>
+
+</body>
+</html>
