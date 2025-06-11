@@ -21,52 +21,22 @@ More results can be found on our [Project page](https://follow-your-motion.githu
 
 
 <table>
-  <tr>
-    <td><video src="./assets/1.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-  <tr>
-    <td><video src="./assets/3.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/5.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/7.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/9.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/11.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/13.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/15.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/17.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/19.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/21.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/23.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-    <tr>
-    <td><video src="./assets/25.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-  <tr>
-    <td><video src="./assets/27.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
-  <tr>
-    <td><video src="./assets/29.mp4" type="video/mp4" autoplay muted loop></video></td>
-  </tr>
+<td><img src="assets\1.gif">
 
+<img src="assets\3.gif">
+<img src="assets\5.gif">
+<img src="assets\7.gif">
+<img src="assets\9.gif">
+<img src="assets\11.gif">
+<img src="assets\13.gif">
+<img src="assets\15.gif">
+<img src="assets\17.gif">
+<img src="assets\19.gif">
+<img src="assets\21.gif">
+<img src="assets\23.gif">
+<img src="assets\25.gif">
+<img src="assets\27.gif">
+<img src="assets\29.gif"></td>
 </table>
 
 
