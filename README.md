@@ -1,6 +1,7 @@
 <div align="center">
 <h2><font color="red"> Follow-Your-Motion </font></center> <br> <center>Video Motion Transfer via Efficient Spatial-Temporal Decoupled Finetuning</h2>
 
+
 [Yue Ma*](https://mayuelala.github.io/), [Yulong Liu*](https://scholar.google.com.my/citations?user=GZC_7c4AAAAJ), [Qiyuan Zhu*](https://github.com/follow-your-motion), [Ayden Yang](https://github.com/follow-your-motion), [Kunyu Feng](https://github.com/fkyyyy), [Xinhua Zhang](https://github.com/NXZXH), [Zhifeng Li](https://scholar.google.com/citations?user=VTrRNN4AAAAJ&hl=zh-CN),  
 [Sirui Han](https://facultyprofiles.hkust.edu.hk/profiles.php?profile=sirui-han-siruihan), [Chenyang Qi](https://chenyangqiqi.github.io/) and [Qifeng Chen](https://scholar.google.com/citations?user=lLMX9hcAAAAJ&hl=en)
 
@@ -8,6 +9,8 @@
 <a href='https://follow-your-motion.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a>  
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=mayuelala.FollowYourMotion&left_color=green&right_color=red)  [![GitHub](https://img.shields.io/github/stars/mayuelala/FollowYourMotion?style=social)](https://github.com/mayuelala/FollowYourMotion) 
 </div>
+
+
 
 
 # 🖼 Gallery
